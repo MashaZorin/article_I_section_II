@@ -1,1 +1,1 @@
-# article_I_section_II
+![Article I Section II](https://i.imgur.com/vD9d8hp.png "Article I Section II")
