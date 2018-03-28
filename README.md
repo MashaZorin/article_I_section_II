@@ -1,4 +1,4 @@
-![Article I Section II](https://i.imgur.com/vD9d8hp.png "Article I Section II")
+![Article I Section II](https://raw.githubusercontent.com/MashaZorin/article_I_section_II/master/articleisectionii.png "Article I Section II")
 
 ## Description
 
