@@ -29,3 +29,9 @@ Questions that may arise include where cities that have lost a top ten position 
 ## D3
 
 Using d3, all graphical elements related to the map will be displayed. Circles on city locations, their colors, their size, the map of the US itself, and the animations associated with growing/shrinking/appearing/disappearing circles will be done using d3.
+
+## Sample Visualization
+
+![USA Map](https://raw.githubusercontent.com/MashaZorin/article_I_section_II/master/usa_map.png "USA Map")
+
+This sample does not use actual data.
