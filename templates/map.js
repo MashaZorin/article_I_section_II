@@ -1,7 +1,7 @@
 var svg = d3.select("svg");
-
+var result;
 var path = d3.geoPath();
-
+var cityLat, cityLng;
 d3.json("usmap.json", function (error, us) {
   if (error) throw error;
 
@@ -44,3 +44,21 @@ d3.json("usmap.json", function (error, us) {
   
   g(0);
 });
+
+function getCoordinates(){
+
+    var geocoder = new google.maps.Geocoder();
+    var address = "New York City";
+    geocoder.geocode({'address': address}, function(results, status) {
+        if (status === 'OK') {
+            result = results[0].geometry.location;
+	    cityLat = result.lat();
+	    cityLng = result.lng();
+        } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+        }
+    });
+}
+
+console.log(cityLat);
+console.log(cityLng);
