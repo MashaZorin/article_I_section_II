@@ -54,11 +54,10 @@ function getCoordinates(){
             result = results[0].geometry.location;
 	    cityLat = result.lat();
 	    cityLng = result.lng();
+      console.log(cityLat);
+      console.log(cityLng);
         } else {
             alert('Geocode was not successful for the following reason: ' + status);
         }
     });
 }
-
-console.log(cityLat);
-console.log(cityLng);
