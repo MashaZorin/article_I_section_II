@@ -1,7 +1,7 @@
 var svg = d3.select("svg");
 var result;
+var DataLibrary;
 var path = d3.geoPath();
-var cityLat, cityLng;
 
 d3.json("https://d3js.org/us-10m.v1.json", function (error, us) {
   if (error) throw error;
@@ -47,22 +47,23 @@ d3.json("https://d3js.org/us-10m.v1.json", function (error, us) {
 });
 
 function getCoordinates() {
-
-  var geocoder = new google.maps.Geocoder();
-  var address = "New York City";
-  geocoder.geocode({
-    'address': address
-  }, function (results, status) {
-    if (status === 'OK') {
-      result = results[0].geometry.location;
-      cityLat = result.lat();
-      cityLng = result.lng();
-      console.log(cityLat);
-      console.log(cityLng);
-    } else {
-      alert('Geocode was not successful for the following reason: ' + status);
-    }
-  });
+    
+    var geocoder = new google.maps.Geocoder();
+    for (var year in myData){
+	for ( var rank in year){
+	    geocoder.geocode({
+		'address': rank[0];
+	    }, function (results, status) {
+		if (status === 'OK') {
+		    result = results[0].geometry.location;
+		    myData.year.rank.push(result.lat());
+		    myData.year.rank.push(result.lng());
+		} else {
+		    alert('Geocode was not successful for the following reason: ' + status);
+		}
+	    });
+	};
+    };
 };
 
 console.log(myData);
