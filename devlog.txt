@@ -9,6 +9,8 @@ Created flask file.
 
 tiffanyC -- 2018-04-16 13:50
 Fiddled with Alex's code - got some things to work, but it still has a couple errors
-Also added url_forlinKyle -- 2018-04-17 09:53:05
+Also added url_for
+
+linKyle -- 2018-04-17 09:53:05
 Added bootstrap + fixed rendering bug
 
