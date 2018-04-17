@@ -53,10 +53,11 @@
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD1ka6WtRJHy_n31DRRG2ZEMMJAYBhdWI&callback=getCoordinates">
     </script>
-    
-    <script type="text/javascript" src="{{url_for('static',filename='js/map.js')}}"></script>
+
     <script type="text/javascript">
       var myData = {{data|tojson|safe}};
     </script>
+    
+    <script type="text/javascript" src="{{url_for('static',filename='js/map.js')}}"></script>
   </body>
 </html>
