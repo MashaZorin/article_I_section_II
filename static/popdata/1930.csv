@@ -1,0 +1,26 @@
+Rank,City,Population,Land Mass
+1,"New York City, NY",6938446,299
+2,"Chicago, IL",3376438,201.9
+3,"Philadelphia, PA",1950961,128
+4,"Detroit, MI",1568662,137.9
+5,"Los Angeles, CA",1238048,440.3
+6,"Cleveland, OH",800429,70.8
+7,"St. Louis, MO",821960,61
+8,"Baltimore, MD",804874,78.7
+9,"Boston, MA",781188,43.9
+10,"Pittsburgh, PA",669817,51.3
+11,"San Francisco, CA",634394,42
+12,"Milwaukee, WI",578249,41.1
+13,"Buffalo, NY",573076,38.9
+14,"Washington, DC",486869,62
+15,"Minneapolis, MN",464356,55.4
+16,"New Orleans, LA",458762,196
+17,"Cincinnati, OH",451160,71.4
+18,"Newark, NJ",442337,23.6
+19,"Kansas City, MO",399746,58.6
+20,"Seattle, WA",365583,68.5
+21,"Indianapolis, IN",364161,54.2
+22,"Rochester, NY",328132,34.2
+23,"Jersey City, NJ",316715,13
+24,"Louisville, KY",307745,36
+25,"Portland, OR",301515,63.5
