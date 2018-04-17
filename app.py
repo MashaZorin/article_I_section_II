@@ -9,7 +9,7 @@ def root():
 
     for x in range(0, 22):
         SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
-        json_url = os.path.join(SITE_ROOT, 'static', 'popdata/', str(1790 + (10 * 0)) + '.csv')
+        json_url = os.path.join(SITE_ROOT, 'static', 'popdata/', str(1790 + (10 * x)) + '.csv')
 
         tempdata = []
 

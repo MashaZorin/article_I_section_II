@@ -64,3 +64,5 @@ function getCoordinates() {
     }
   });
 };
+
+console.log(myData);
