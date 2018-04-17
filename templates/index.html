@@ -1,21 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-<head>
-  <title>population stuff</title>
+  <head>
 
-  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
-</head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body>
-  <svg width="960" height="600" id="stuff"></svg>
-  <script type="text/javascript" src="{{url_for('static', filename='js/d3.v4.min.js')}}"></script>
-  <script type="text/javascript" src="{{url_for('static', filename='js/topojson.v2.min.js')}}"></script>
-  <!--
-  <script async defer
-	  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD1ka6WtRJHy_n31DRRG2ZEMMJAYBhdWI&callback=getCoordinates">
-  </script>
--->
-  <script type="text/javascript" src="{{url_for('static',filename='js/map.js')}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
 
-</body>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
+
+    <title>US Pop(ulation) Culture</title>
+  </head>
+
+  <body>
+    <svg width="960" height="600" id="stuff"></svg>
+
+    <button id="b1" class="btn btn-primary">My First Button 💖</button>
+    
+    <script type="text/javascript" src="{{url_for('static', filename='js/jquery-3.2.1.slim.min.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/popper.min.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+
+    <script type="text/javascript" src="{{url_for('static', filename='js/d3.v4.min.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/topojson.v2.min.js')}}"></script>
+    <!--
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD1ka6WtRJHy_n31DRRG2ZEMMJAYBhdWI&callback=getCoordinates">
+    </script>
+    -->
+    <script type="text/javascript" src="{{url_for('static',filename='js/map.js')}}"></script>
+
+  </body>
+</html>

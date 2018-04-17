@@ -34,10 +34,10 @@ d3.json("https://d3js.org/us-10m.v1.json", function(error, us) {
       })
       .attr("r", 20)
       .on("mouseover", function(d) {      
-        d3.select(this).transition().duration(500).style("fill", "#00aeef"); 
+        d3.select(this).transition().duration(250).style("fill", "#00aeef"); 
     })
       .on("mouseout", function(d) {
-        d3.select(this).transition().duration(1000).style("fill", "black");
+        d3.select(this).transition().duration(500).style("fill", "black");
       }) ;
   };
   
