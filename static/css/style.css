@@ -1,3 +1,18 @@
+#stuff {
+    display: block;
+    margin: auto;
+}
+
+#map-jumbo {
+    max-width: 56%;
+    float: left;
+    display: flex;
+}
+
+#btn-wrapper {
+    padding-top: 25px;
+}
+
 .states {
     fill: steelblue;
 }
