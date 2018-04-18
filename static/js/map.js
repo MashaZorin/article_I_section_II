@@ -60,5 +60,11 @@ d3.json("https://d3js.org/us-10m.v1.json", function (error, us) {
   }
 });
 
+$('#ex1').slider({
+	formatter: function(value) {
+		return 'Current value: ' + value;
+	}
+});
+
 console.log(myData);
 console.log(myCoords);

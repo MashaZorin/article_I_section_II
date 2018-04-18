@@ -34,3 +34,8 @@
 circle {
     z-index: 5;
 }
+
+
+#ex1Slider .slider-selection {
+	background: #BABABA;
+}

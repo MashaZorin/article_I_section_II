@@ -16,7 +16,8 @@ def root():
         with open(json_url) as f:
             for row in csv.DictReader(f):
                 tempdata.append(row)
-        data.append(json.dumps(tempdata))
+        
+        data.append(tempdata)
     
     coords = []
 
@@ -27,7 +28,7 @@ def root():
         for row in csv.DictReader(f):
             coords.append(row)
 
-    return render_template('index.html', data=data, coords=json.dumps(coords))
+    return render_template('index.html', data=json.dumps(data), coords=json.dumps(coords))
 
 if __name__ == '__main__':
     app.run(debug = True, use_reloader=False)
