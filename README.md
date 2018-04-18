@@ -34,6 +34,6 @@ Using d3, all graphical elements related to the map will be displayed. Circles o
 
 ## Sample Visualization
 
-![USA Map](https://raw.githubusercontent.com/MashaZorin/article_I_section_II/master/usa_map.png "USA Map")
+![USA Map](https://raw.githubusercontent.com/MashaZorin/article_I_section_II/master/static/images/Demo.png "USA Map")
 
 This sample does not use actual data.
