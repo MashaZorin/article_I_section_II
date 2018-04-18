@@ -17,8 +17,17 @@ def root():
             for row in csv.DictReader(f):
                 tempdata.append(row)
         data.append(json.dumps(tempdata))
+    
+    coords = []
 
-    return render_template('index.html', data=data)
+    SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
+    json_url = os.path.join(SITE_ROOT, 'static', 'popdata/coords.csv')
+
+    with open(json_url) as f:
+        for row in csv.DictReader(f):
+            coords.append(row)
+
+    return render_template('index.html', data=data, coords=json.dumps(coords))
 
 if __name__ == '__main__':
     app.run(debug = True, use_reloader=False)

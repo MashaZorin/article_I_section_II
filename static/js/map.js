@@ -60,24 +60,5 @@ d3.json("https://d3js.org/us-10m.v1.json", function (error, us) {
   }
 });
 
-function getCoordinates() {
-
-  var geocoder = new google.maps.Geocoder();
-  for (var year in myData) {
-    for (var rank in year) {
-      geocoder.geocode({
-        'address': rank[0]
-      }, function (results, status) {
-        if (status === 'OK') {
-          result = results[0].geometry.location;
-          myData.year.rank.push(result.lat());
-          myData.year.rank.push(result.lng());
-        } else {
-          alert('Geocode was not successful for the following reason: ' + status);
-        }
-      });
-    };
-  };
-};
-
 console.log(myData);
+console.log(myCoords);
