@@ -26,3 +26,6 @@ Buttons!
 linKyle -- 2018-04-17 13:54:55
 DATA TO JS
 
+linKyle -- 2018-04-18 09:38:32
+Fixed city names + added coordinates file for all cities
+
