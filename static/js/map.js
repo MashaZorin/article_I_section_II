@@ -19,9 +19,19 @@ d3.json("https://d3js.org/us-10m.v1.json", function (error, us) {
       return a !== b;
     })));
 
-  var d = [
-    [500, 500]
-  ];
+  var d = [];
+
+  var i = 0;
+  while (i < 1){
+    var datas = myData[i];
+    var pops = datas.split("\"Population\": \"");
+    for (var j = 1; j < pops.length; j ++){
+      var pop = pops[j].split("\"")[0];
+      pop = parseInt(pop);
+      d.push([j * 25, j * 25, pop / 1000]);
+    }
+    i ++;
+  }
 
   var g = function (n) {
     var svgc = svg.selectAll("circle")
@@ -34,7 +44,9 @@ d3.json("https://d3js.org/us-10m.v1.json", function (error, us) {
       .attr("cy", function (d) {
         return d[1];
       })
-      .attr("r", 20)
+      .attr("r", function (d) {
+        return d[2];
+      })
       .on("mouseover", function (d) {
         d3.select(this).transition().duration(250).style("fill", "#00aeef");
       })
@@ -43,7 +55,9 @@ d3.json("https://d3js.org/us-10m.v1.json", function (error, us) {
       });
   };
 
-  g(0);
+  for (var k = 0; k < d.length; k ++){
+    g(k);
+  }
 });
 
 function getCoordinates() {
