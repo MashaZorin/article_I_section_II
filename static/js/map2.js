@@ -143,6 +143,15 @@ var genCityCircles = function () {
             return calcRadius(d[2][1]);
         })
         .attr("fill", "red")
+        .on("mouseover", function (d) {
+            d3.select(this).transition().duration(250).style("fill", "black");
+        })
+        .on("mouseout", function (d) {
+            d3.select(this).transition().duration(250).style("fill", "red");
+        })
+        .on("click", function(d, f) {
+            alert("Rank: " + f + "\nCity: " + d[2][0] + "\nPopulation: " + d[2][1]);
+        });
 };
 
 // Testing
