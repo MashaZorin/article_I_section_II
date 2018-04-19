@@ -9,6 +9,11 @@ var projection = d3.geoAlbersUsa();
 var path = d3.geoPath()
     .projection(null);
 
+colors = ['darkred', 'red', 'orangered', 'tomato', 'orange', 'lightsalmon', 'sandybrown', 'khaki', 
+'gold', 'goldenrod', 'yellowgreen', 'springgreen', 'limegreen', 'green', 
+'darkgreen', 'cadetblue', 'cornflowerblue', 'dodgerblue', 'slateblue', 'navy', 'indigo', 
+'rebeccapurple', 'purple', 'orchid', 'plum', 'pink', 'hotpink'];
+
 d3.queue()
     .defer(d3.json, "https://d3js.org/us-10m.v1.json")
     .await(data);
@@ -142,15 +147,17 @@ var genCityCircles = function () {
         .attr("r", function (d) {
             return calcRadius(d[2][1]);
         })
-        .attr("fill", "red")
+        .attr("fill", function (d, f){
+            return colors[f];
+        })
         .on("mouseover", function (d) {
             d3.select(this).transition().duration(250).style("fill", "black");
         })
-        .on("mouseout", function (d) {
-            d3.select(this).transition().duration(250).style("fill", "red");
+        .on("mouseout", function (d, f) {
+            d3.select(this).transition().duration(250).style("fill", colors[f]);
         })
         .on("click", function(d, f) {
-            alert("Rank: " + f + "\nCity: " + d[2][0] + "\nPopulation: " + d[2][1]);
+            alert("Rank: " + (f + 1) + "\nCity: " + d[2][0] + "\nPopulation: " + d[2][1]);
         });
 };
 
@@ -163,6 +170,6 @@ var testData = function (year) {
 
 $('#ex1').slider({
     formatter: function (value) {
-        return 'Current value: ' + value;
+        testData(value);
     }
 });
