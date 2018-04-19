@@ -56,7 +56,7 @@ var getLng = function (name) {
 var generateDataset = function () {
     dataset = []; // Clears the dataset upon run.
     curArray = myData[year]; // Sets the current array to the current year
-    console.log(curArray);
+    //console.log(curArray);
 
     for (var i = 0; i < 25; i++) { // Goes through each city in the year's array
         var tempset = []; // Temporary array to store information. Will get appended to dataset.
@@ -77,6 +77,7 @@ var generateDataset = function () {
 
         tempset.push(tempset2);
         dataset.push(tempset);
+        console.log(tempset);
     }
 }
 
@@ -87,7 +88,7 @@ function data(error, us) {
             .scale(979) // Scale of US model to fit the SVG
             .center([-96.2786, 38.850]) // Center of US model
         */
-        .scale(1263) //Added from block
+        .scale(1260) //Added from block
         //.center([-106, 37.5]) //Added from block
         .translate([width / 2, height / 2 - 15]);
 
@@ -109,6 +110,24 @@ var clearCityCircles = function () {
     svg.selectAll("circle").remove();
 };
 
+var calcTotalPop = function () {
+    var total = 0;
+    for (var i = 0; i < 25; i++) {
+        total += getPop(year, i);
+    }
+    return total;
+};
+
+var calcPercentagePop = function (population) {
+    var totalPop = calcTotalPop();
+    return population / totalPop;
+};
+
+var calcRadius = function (population) {
+    console.log(calcPercentagePop(population));
+    return calcPercentagePop(population) * 150;
+};
+
 var genCityCircles = function () {
     clearCityCircles();
     svg.selectAll("circle")
@@ -120,7 +139,9 @@ var genCityCircles = function () {
         .attr("cy", function (d) {
             return projection(d)[1];
         })
-        .attr("r", "8px")
+        .attr("r", function (d) {
+            return calcRadius(d[2][1]);
+        })
         .attr("fill", "red")
 };
 

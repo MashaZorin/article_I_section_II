@@ -35,3 +35,6 @@ Removed google geocoder in favor of hardcoded coordinates
 linKyle -- 2018-04-18 13:44:33
 String -> Not string
 
+linKyle -- 2018-04-19 13:47:01
+Circle radius relative to total pop
+
