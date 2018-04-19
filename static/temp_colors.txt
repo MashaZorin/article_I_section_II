@@ -1,0 +1,1 @@
+colors = ['Red', 'DarkRed', 'OrangeRed', 'DarkOrange', 'Gold', 'DarkKhaki', 'YellowGreen', 'LimeGreen', 'DarkGreen', 'MidnightBlue', 'Blue', 'DeepSkyBlue', 'PowderBlue', 'Thistle', 'Orchid', 'DarkOrchid', 'Indigo', 'DarkMagenta', 'Magenta', 'DeepPink', 'HotPink', 'LightPink', 'RosyBrown', 'DimGrey', 'Black']
