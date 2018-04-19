@@ -58,10 +58,10 @@
     <script type="text/javascript" src="{{url_for('static', filename='js/topojson.v2.min.js')}}"></script>
 
     <script type="text/javascript">
-      var myData = {{data|tojson|safe}};
-      var myCoords = {{coords|tojson|safe}};
+      var myData = JSON.parse({{data|tojson|safe}});
+      var myCoords = JSON.parse({{coords|tojson|safe}});
     </script>
     
-    <script type="text/javascript" src="{{url_for('static',filename='js/map.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename='js/map2.js')}}"></script>
   </body>
 </html>
