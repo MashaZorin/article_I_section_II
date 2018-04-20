@@ -6,7 +6,7 @@ Period 8 - Tiffany Chen | Kyle Lin | Alex Taradachuk | Masha Zorin
 
 ## Description
 
-The Census of the United States of America is a census conducted every 10 years and is mandated by Article I Section II of the United States Constitution. The census data is available from the census.gov website and one dataset that can be accessed are the ten most populous cities of that decade along with their respective populations.
+The Census of the United States of America is a census conducted every 10 years and is mandated by Article I Section II of the United States Constitution. The census data is available from the census.gov website and one dataset that can be accessed is a list of the most populous cities of that decade along with their respective populations.
 
 ## Data Source
 
@@ -14,7 +14,7 @@ The source of our population data can be found on the [Population of the 100 Lar
 
 ## Bringing the data to life
 
-We plan on displaying the data on a U.S. map. On the map will be x circles that show the x most populous cities, and the sizes of the circles will be based on the population of the city at the time (proportional to the sum of the population of the x cities) (0 <= x < 23). There will also be a list of the x cities under the map that will dynamically change as time continues with the names of the x largest cities and the exact populations (according to the U.S. census). The map and list will transform on its own; however, there will be a pause button, a play button, and a slider to allow the user to examine the data more closely.
+We plan on displaying the data on a U.S. map. On the map will be x circles that show the x most populous cities, with 5 <= x <= 25, and the sizes of the circles will be based on the population of the city at the time (proportional to the sum of the population of the x cities). There will also be a list of the x cities under the map that will dynamically change as time continues with the names of the x largest cities and the exact populations (according to the U.S. census). The map and list will transform on its own; however, there will be a pause button, a play button, and a slider to allow the user to examine the data more closely.
 
 ## Absence of User Interaction
 
@@ -22,13 +22,13 @@ Without user interaction, the timeline will move along the decades on its own. T
 
 ## Interaction
 
-When the user clicks on a circle on the map, the automatic animation will pause and statistics about that city at that time will be displayed. Hovering on a circle displays the same data. The user can also slide along the timeline as well as press the pause and start button to stop/resume the automatic animation.
+When the user clicks on a circle on the map, the automatic animation will pause and statistics about that city at that time will be displayed. Hovering on a circle displays the same data. The user can also slide along the timeline as well as press the pause and start button to stop/resume the automatic animation. The user can also choose the number of cities to be displayed (from a range of 5 to 25 cities).
 
 ## Questions
 
-This visualization will allow the user to explore how the position of being one of the ten most populous cities in the US has changed since the first census, and perhaps allows the user to see where populations have shifted over the years.
+This visualization will allow the user to explore how the position of being one of the most populous cities in the US has changed since the first census, and perhaps allows the user to see where populations have shifted over the years.
 
-Questions that may arise include where cities that have lost a top ten position rank in the US now and possibly what the ten most populous cities will be in 2020.
+Questions that may arise include where cities that have lost a top rank in the US now and possibly what the most populous cities will be in 2020.
 
 ## D3
 
