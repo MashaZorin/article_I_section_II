@@ -9,10 +9,11 @@ var projection = d3.geoAlbersUsa();
 var path = d3.geoPath()
     .projection(null);
 
-colors = ['darkred', 'red', 'orangered', 'tomato', 'orange', 'lightsalmon', 'sandybrown', 'khaki', 
-'gold', 'goldenrod', 'yellowgreen', 'springgreen', 'limegreen', 'green', 
-'darkgreen', 'cadetblue', 'cornflowerblue', 'dodgerblue', 'slateblue', 'navy', 'indigo', 
-'rebeccapurple', 'purple', 'orchid', 'plum', 'pink', 'hotpink'];
+colors = ['darkred', 'red', 'orangered', 'tomato', 'orange', 'lightsalmon', 'sandybrown', 'khaki',
+    'gold', 'goldenrod', 'yellowgreen', 'springgreen', 'limegreen', 'green',
+    'darkgreen', 'cadetblue', 'cornflowerblue', 'dodgerblue', 'slateblue', 'navy', 'indigo',
+    'rebeccapurple', 'purple', 'orchid', 'plum', 'pink', 'hotpink'
+];
 
 d3.queue()
     .defer(d3.json, "https://d3js.org/us-10m.v1.json")
@@ -82,7 +83,6 @@ var generateDataset = function () {
 
         tempset.push(tempset2);
         dataset.push(tempset);
-        console.log(tempset);
     }
 }
 
@@ -129,8 +129,7 @@ var calcPercentagePop = function (population) {
 };
 
 var calcRadius = function (population) {
-    console.log(calcPercentagePop(population));
-    return calcPercentagePop(population) * 150;
+    return Math.sqrt(calcPercentagePop(population)) * 100;
 };
 
 var genCityCircles = function () {
@@ -147,16 +146,27 @@ var genCityCircles = function () {
         .attr("r", function (d) {
             return calcRadius(d[2][1]);
         })
-        .attr("fill", function (d, f){
+        .attr("fill", function (d, f) {
             return colors[f];
         })
-        .on("mouseover", function (d) {
-            d3.select(this).transition().duration(250).style("fill", "black");
+        // Modification of custom tooltip code provided by Malcolm Maclean, "D3 Tips and Tricks" 
+        // http://www.d3noob.org/2013/01/adding-tooltips-to-d3js-graph.html
+        .on("mouseover", function (d, f) {
+            div.transition()
+                .duration(200)
+                .style("opacity", .9);
+            div.html("City: " + d[2][0] + "<br>Population: " + d[2][1] + "<br>Rank: " + (f + 1))
+                .style("left", (d3.event.pageX) + "px")
+                .style("top", (d3.event.pageY - 28) + "px");
         })
-        .on("mouseout", function (d, f) {
-            d3.select(this).transition().duration(250).style("fill", colors[f]);
+
+        // fade out tooltip on mouse out               
+        .on("mouseout", function (d) {
+            div.transition()
+                .duration(500)
+                .style("opacity", 0);
         })
-        .on("click", function(d, f) {
+        .on("click", function (d, f) {
             alert("Rank: " + (f + 1) + "\nCity: " + d[2][0] + "\nPopulation: " + d[2][1]);
         });
 };
@@ -173,3 +183,10 @@ $('#ex1').slider({
         testData(value);
     }
 });
+
+var div = d3.select("body")
+    .append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+
+clearCityCircles();
