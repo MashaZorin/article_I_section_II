@@ -34,6 +34,7 @@ var updateYear = function (newYear) {
 
 var updateCircles = function (newNumber) {
     numCircles = newNumber;
+    $('#super-link-2').html("Number of Circles: " + numCircles + "<span class='sr-only'>(current)</span>")
 };
 
 var getPop = function (year, rank) {

@@ -51,7 +51,7 @@ circle:hover {
 }
 
 
-#ex1Slider .slider-selection {
+#ex1Slider .slider-selection , #ex2Slider .slider-selection {
 	background: #BABABA;
 }
 
