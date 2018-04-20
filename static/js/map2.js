@@ -208,6 +208,9 @@ var calcYear = function () {
 };
 
 var moveSlider = function () {
+    div.transition()
+        .duration(500)
+        .style("opacity", 0);
     updateYear(calcYear());
     mySlider.slider('setValue', year);
 };
