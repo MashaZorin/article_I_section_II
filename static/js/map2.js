@@ -217,7 +217,7 @@ var moveSlider = function () {
 
 var startAni = function () {
     stopAni();
-    intervalID = setInterval(moveSlider, 500);
+    intervalID = setInterval(moveSlider, 1000);
 };
 
 var stopAni = function () {

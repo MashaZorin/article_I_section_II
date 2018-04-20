@@ -52,7 +52,11 @@ circle:hover {
 
 
 #ex1Slider .slider-selection , #ex2Slider .slider-selection {
-	background: #BABABA;
+    background: #BABABA;
+}
+
+#ex1Slider, #ex2Slider {
+    margin: 0 10px 0 10px;
 }
 
 div.tooltip {   
