@@ -28,6 +28,7 @@ var year, // Current year. 0-21
 
 var updateYear = function (newYear) {
     year = newYear;
+    $('#super-link').html("Now Viewing: " + (1790 + (10 * year)) + "<span class='sr-only'>(current)</span>");
 };
 
 var getPop = function (year, rank) {
@@ -95,7 +96,7 @@ function data(error, us) {
         */
         .scale(1260) //Added from block
         //.center([-106, 37.5]) //Added from block
-        .translate([width / 2, height / 2 - 15]);
+        .translate([(width / 2) - 3, (height / 2) - 15]);
 
     svg.append("g")
         .attr("class", "states")
@@ -129,7 +130,7 @@ var calcPercentagePop = function (population) {
 };
 
 var calcRadius = function (population) {
-    return Math.sqrt(calcPercentagePop(population)) * 100;
+    return Math.sqrt(calcPercentagePop(population) * 20000 / Math.PI);
 };
 
 var genCityCircles = function () {
@@ -156,8 +157,8 @@ var genCityCircles = function () {
                 .duration(200)
                 .style("opacity", .9);
             div.html("City: " + d[2][0] + "<br>Population: " + d[2][1] + "<br>Rank: " + (f + 1))
-                .style("left", (d3.event.pageX) + "px")
-                .style("top", (d3.event.pageY - 28) + "px");
+                .style("left", (d3.event.pageX + 15) + "px")
+                .style("top", (d3.event.pageY - 45) + "px");
         })
 
         // fade out tooltip on mouse out               
@@ -178,11 +179,39 @@ var testData = function (year) {
     genCityCircles();
 };
 
-$('#ex1').slider({
+var mySlider = $('#ex1').slider({
     formatter: function (value) {
         testData(value);
     }
 });
+
+var intervalID;
+
+var calcYear = function () {
+    if (year < 22) {
+        return year + 1;
+    } else {
+        return 0;
+    }
+};
+
+var moveSlider = function () {
+    updateYear(calcYear());
+    mySlider.slider('setValue', year);
+};
+
+var startAni = function () {
+    stopAni();
+    intervalID = setInterval(moveSlider, 500);
+};
+
+var stopAni = function () {
+    clearInterval(intervalID);
+};
+
+$('#b1').click(startAni);
+
+$('#b2').click(stopAni);
 
 var div = d3.select("body")
     .append("div")
@@ -190,3 +219,4 @@ var div = d3.select("body")
     .style("opacity", 0);
 
 clearCityCircles();
+startAni();
