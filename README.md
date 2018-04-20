@@ -1,5 +1,7 @@
 ![Article I Section II](https://raw.githubusercontent.com/MashaZorin/article_I_section_II/master/articleisectionii.png "Article I Section II")
 
+Period 8 - Tiffany Chen | Kyle Lin | Alex Taradachuk | Masha Zorin
+
 [Data Spreadsheets](https://docs.google.com/spreadsheets/d/1tKO0HOPJrB6eMvYdAlO1eQQ_SbgyDibK6cmYjUAJ5n4/edit?usp=sharing)
 
 ## Description
@@ -12,7 +14,7 @@ The source of our population data can be found on the [Population of the 100 Lar
 
 ## Bringing the data to life
 
-We plan on displaying the data on a U.S. map. On the map will be ~10 circles that show the ten most populous cities, and the sizes of the circles will be based on the population of the city at the time (proportional to the sum of the population of the ten cities). There will also be a list of the ten cities under the map that will dynamically change as time continues with the names of the ten largest cities and the exact populations (according to the U.S. census). The map and list will transform on its own; however, there will be a pause button, a play button, and a slider to allow the user to examine the data more closely.
+We plan on displaying the data on a U.S. map. On the map will be x circles that show the x most populous cities, and the sizes of the circles will be based on the population of the city at the time (proportional to the sum of the population of the x cities) (0 <= x < 23). There will also be a list of the x cities under the map that will dynamically change as time continues with the names of the x largest cities and the exact populations (according to the U.S. census). The map and list will transform on its own; however, there will be a pause button, a play button, and a slider to allow the user to examine the data more closely.
 
 ## Absence of User Interaction
 
@@ -20,7 +22,7 @@ Without user interaction, the timeline will move along the decades on its own. T
 
 ## Interaction
 
-When the user clicks on a circle on the map, the automatic animation will pause and statistics about that city at that time will be displayed. The user can also slide along the timeline as well as press the pause and start button to stop/resume the automatic animation.
+When the user clicks on a circle on the map, the automatic animation will pause and statistics about that city at that time will be displayed. Hovering on a circle displays the same data. The user can also slide along the timeline as well as press the pause and start button to stop/resume the automatic animation.
 
 ## Questions
 
