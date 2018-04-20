@@ -20,6 +20,7 @@ d3.queue()
     .await(data);
 
 var year, // Current year. 0-21
+    numCircles = 25, // Number of circles to display 5 <= numCircles <= 25
     curArray, // Current array. myData[year]
     curCity, // Current city. Goes through ranks and updates curCity.
     curCityLat, // Current city lat
@@ -29,6 +30,10 @@ var year, // Current year. 0-21
 var updateYear = function (newYear) {
     year = newYear;
     $('#super-link').html("Now Viewing: " + (1790 + (10 * year)) + "<span class='sr-only'>(current)</span>");
+};
+
+var updateCircles = function (newNumber) {
+    numCircles = newNumber;
 };
 
 var getPop = function (year, rank) {
@@ -65,7 +70,7 @@ var generateDataset = function () {
     curArray = myData[year]; // Sets the current array to the current year
     //console.log(curArray);
 
-    for (var i = 0; i < 25; i++) { // Goes through each city in the year's array
+    for (var i = 0; i < numCircles; i++) { // Goes through each city in the year's array
         var tempset = []; // Temporary array to store information. Will get appended to dataset.
         var tempset2 = [];
 
@@ -182,6 +187,12 @@ var testData = function (year) {
 var mySlider = $('#ex1').slider({
     formatter: function (value) {
         testData(value);
+    }
+});
+
+var mySlider2 = $('#ex2').slider({
+    formatter: function (value) {
+        updateCircles(value);
     }
 });
 
