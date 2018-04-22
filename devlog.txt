@@ -26,6 +26,9 @@ Buttons!
 linKyle -- 2018-04-17 13:54:55
 DATA TO JS
 
+tiffanyC -- 2018-04-17 18:29
+Made it so that the javascript file could read the data by parsing the string
+
 linKyle -- 2018-04-18 09:38:32
 Fixed city names + added coordinates file for all cities
 
@@ -35,11 +38,18 @@ Removed google geocoder in favor of hardcoded coordinates
 linKyle -- 2018-04-18 13:44:33
 String -> Not string
 
+tiffanyC -- 2018-04-18 20:21
+Tried making the javascript file read lat and long -- didn't work too well :(
+
 linKyle -- 2018-04-19 13:47:01
 Circle radius relative to total pop
 
 mashaZ -- 2018-04-19 13:54
 Created list of colors for dots
+
+tiffanyC -- 2018-04-19 19:18
+Made the circles change color depending on its ranking in population
+Also made the circles show its data when you click on it
 
 linKyle -- 2018-04-20 10:10:42
 Tooltips
@@ -53,3 +63,5 @@ numcircles
 mashaZ -- 2018-04-20 13:52
 Updated README.md
 
+tiffanyC - 2018-04-22 14:27
+Finished table! the rows are even color-coded :)
