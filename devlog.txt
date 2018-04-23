@@ -1,6 +1,9 @@
 tiffanyC -- 2018-04-10 14:00
 Found a US map as a template
 
+taradachukA -- 2018-040-10 14:04
+Began geocoding API
+
 tiffanyC -- 2018-04-11 14:02
 Used json to do map - no clue why the circles are in the front and not in the back
 
@@ -20,6 +23,9 @@ Fixed formatting
 linKyle -- 2018-04-17 12:36:59
 Added population data
 
+taradachukA -- 2018-04-17 12:42:58
+Geocodung API returns coordinates of cities based on name
+
 linKyle -- 2018-04-17 13:08:05
 Buttons!
 
@@ -38,6 +44,9 @@ Removed google geocoder in favor of hardcoded coordinates
 linKyle -- 2018-04-18 13:44:33
 String -> Not string
 
+taradachukA -- 2018-04-18 13:56:36
+Tried editing data to include coordinates by using Geocoding API
+
 tiffanyC -- 2018-04-18 20:21
 Tried making the javascript file read lat and long -- didn't work too well :(
 
@@ -50,6 +59,9 @@ Created list of colors for dots
 tiffanyC -- 2018-04-19 19:18
 Made the circles change color depending on its ranking in population
 Also made the circles show its data when you click on it
+
+taradachukA -- 2018-04-19 9:15:48
+Fixed error with circles not loading before a certain year - fixed by others before I could push
 
 linKyle -- 2018-04-20 10:10:42
 Tooltips
