@@ -71,3 +71,6 @@ tiffanyC - 2018-04-22 21:09
 Made small edit to tablelinKyle -- 2018-04-22 21:38:06
 Added land mass + population density to table
 
+linKyle -- 2018-04-22 21:41:53
+Added land mass + population density to tooltips
+

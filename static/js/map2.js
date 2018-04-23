@@ -159,7 +159,8 @@ var genCityCircles = function () {
             div.transition()
                 .duration(200)
                 .style("opacity", .9);
-            div.html("City: " + d[2][0] + "<br>Population: " + d[2][1] + "<br>Rank: " + (f + 1))
+            div.html("City: " + d[2][0] + "<br>Population (# of people): " + d[2][1] + "<br>Rank: " + (f + 1) 
+            + "<br>Land Mass (sq. miles): " + d[2][2] + "<br>Population Density (per sq. mile): " + d[2][3])
                 .style("left", (d3.event.pageX + 15) + "px")
                 .style("top", (d3.event.pageY - 45) + "px");
         })             
@@ -169,7 +170,8 @@ var genCityCircles = function () {
                 .style("opacity", 0);
         })
         .on("click", function (d, f) {
-            alert("Rank: " + (f + 1) + "\nCity: " + d[2][0] + "\nPopulation: " + d[2][1]);
+            alert("City: " + d[2][0] + "\nPopulation (# of people): " + d[2][1] + "\nRank: " + (f + 1) 
+            + "\nLand Mass (sq. miles): " + d[2][2] + "\nPopulation Density (per sq. mile): " + d[2][3]);
         });
 };
 
