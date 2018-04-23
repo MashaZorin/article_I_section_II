@@ -87,7 +87,11 @@ var generateDataset = function () {
         tempset2.push(curCity); // Adds the current city to the end of tempset
         tempset2.push(curCityPop); // Adds the population to the end of tempset
         tempset2.push(curCityMass); // Adds the landmass to the end of tempset
-
+        if (curCityMass != "N/A") {
+            tempset2.push(curCityPop / curCityMass); // Adds the population density
+        } else {
+            tempset2.push("No land area data"); // Adds the population density
+        }
         tempset.push(tempset2);
         dataset.push(tempset);
     }
@@ -96,12 +100,7 @@ var generateDataset = function () {
 function data(error, us) {
 
     projection
-        /*
-            .scale(979) // Scale of US model to fit the SVG
-            .center([-96.2786, 38.850]) // Center of US model
-        */
-        .scale(1260) //Added from block
-        //.center([-106, 37.5]) //Added from block
+        .scale(1260)
         .translate([(width / 2) - 3, (height / 2) - 15]);
 
     svg.append("g")
@@ -156,8 +155,6 @@ var genCityCircles = function () {
         .attr("fill", function (d, f) {
             return colors[f];
         })
-        // Modification of custom tooltip code provided by Malcolm Maclean, "D3 Tips and Tricks" 
-        // http://www.d3noob.org/2013/01/adding-tooltips-to-d3js-graph.html
         .on("mouseover", function (d, f) {
             div.transition()
                 .duration(200)
@@ -165,9 +162,7 @@ var genCityCircles = function () {
             div.html("City: " + d[2][0] + "<br>Population: " + d[2][1] + "<br>Rank: " + (f + 1))
                 .style("left", (d3.event.pageX + 15) + "px")
                 .style("top", (d3.event.pageY - 45) + "px");
-        })
-
-        // fade out tooltip on mouse out               
+        })             
         .on("mouseout", function (d) {
             div.transition()
                 .duration(500)
@@ -193,6 +188,12 @@ var updateTable = function() {
             var pop = document.createElement("td");
             pop.innerHTML = dataset[i][2][1];
             row.appendChild(pop);
+            var mass = document.createElement("td");
+            mass.innerHTML = dataset[i][2][2];
+            row.appendChild(mass);
+            var popDen = document.createElement("td");
+            popDen.innerHTML = dataset[i][2][3];
+            row.appendChild(popDen);
             row.style.color = colors[i];
             table.appendChild(row);
         }
