@@ -219,9 +219,7 @@ var mySlider = $('#ex1').slider({
 var mySlider2 = $('#ex2').slider({
     formatter: function (value) {
         updateCircles(value);
-	generateDataset();
-	genCityCircles();
-	updateTable();
+        testData(year);
     }
 });
 
