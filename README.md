@@ -14,7 +14,7 @@ The source of our population data can be found on the [Population of the 100 Lar
 
 ## Bringing the data to life
 
-We plan on displaying the data on a U.S. map. On the map will be x circles that show the x most populous cities, with 5 <= x <= 25, and the sizes of the circles will be based on the population of the city at the time (proportional to the sum of the population of the x cities). There will also be a list of the x cities under the map that will dynamically change as time continues with the names of the x largest cities and the exact populations (according to the U.S. census). The map and list will transform on its own; however, there will be a pause button, a play button, and a slider to allow the user to examine the data more closely.
+We plan on displaying the data on a U.S. map. On the map will be x circles that show the x most populous cities, with 5 <= x <= 25, and the sizes of the circles will be based on the population of the city at the time (proportional to the sum of the population of the x cities). There will also be a list of the x cities under the map that will dynamically change as time continues with the names of the x largest cities and the exact populations (according to the U.S. census). The map and list will transform on its own; however, there will be a pause button, a play button, and a slider to allow the user to examine the data more closely.Below the map, there will be a table showing the rank (determined by population), name, population, land mass, and population density of each city, and it will also show which color corresponds to which city.
 
 ## Absence of User Interaction
 

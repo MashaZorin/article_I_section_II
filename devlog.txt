@@ -74,3 +74,7 @@ Added land mass + population density to table
 linKyle -- 2018-04-22 21:41:53
 Added land mass + population density to tooltips
 
+mashaZ -- 2018-4-23 00:46
+Made small change so that image is regenerated when number of cities is changed, even when paused
+Fixed minor error
+Updated README.md
