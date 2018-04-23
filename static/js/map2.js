@@ -182,18 +182,20 @@ var updateTable = function() {
     var table = document.getElementById("inputdatahere");
     table.innerHTML = "";
     for (var i = 0; i < numCircles; i ++){
-        var row = document.createElement("tr");
-        var ranking = document.createElement("td");
-        ranking.innerHTML = i + 1 + "";
-        row.appendChild(ranking);
-        var city = document.createElement("td");
-        city.innerHTML = dataset[i][2][0];
-        row.appendChild(city);
-        var pop = document.createElement("td");
-        pop.innerHTML = dataset[i][2][1];
-        row.appendChild(pop);
-        row.style.color = colors[i];
-        table.appendChild(row);
+        if (i != 24 || year != 0){
+            var row = document.createElement("tr");
+            var ranking = document.createElement("td");
+            ranking.innerHTML = i + 1 + "";
+            row.appendChild(ranking);
+            var city = document.createElement("td");
+            city.innerHTML = dataset[i][2][0];
+            row.appendChild(city);
+            var pop = document.createElement("td");
+            pop.innerHTML = dataset[i][2][1];
+            row.appendChild(pop);
+            row.style.color = colors[i];
+            table.appendChild(row);
+        }
     }
 }
 
